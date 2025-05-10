@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.log
+
+# Virtual Environment
+venv/
+.env/
+
+# Flask
+instance/
+uploads/
+static/uploads/
+images/
+model/
+
+# Model files
+*.h5
+*.keras
+*.pb
+*.tflite
+
+# Dataset folders
+retrain_data/
+kaggle/
+data/
+*.zip
+
+# Jupyter/Colab
+.ipynb_checkpoints/
+*.ipynb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
