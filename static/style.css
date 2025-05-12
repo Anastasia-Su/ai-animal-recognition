@@ -1,53 +1,85 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+body, body.result-page {
+    font-family: 'Inter', sans-serif;
+    background-image: url("bg/bg-animals.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-form {
-    margin-top: 20px;
-}
-
-input[type="file"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #4285f4;
-    color: white;
+.card {
+    background: linear-gradient(135deg, #f9fafb, #eef1f5);
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-    background-color: #306fc9;
+.card.glass {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(12px);           /* Frosted glass blur */
+    -webkit-backdrop-filter: blur(12px);   /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    color: #fff; /* Optional: adjust text color for visibility */
+}
+  
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 }
 
-img {
-    margin-top: 20px;
-    max-width: 100%;
-    height: auto;
+.animal-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+    max-height: 250px; /* Limits height */
+    overflow-y: auto;  /* Enables scroll */
+    background: rgba(255, 255, 255, 0.08); /* Transparent frosted glass */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+  
+.animal-list li {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+ 
+.result-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f8;
+    background-image: none;
+}
+  
+.result-container {
+    max-width: 550px;
+    margin: auto;
+    padding: 10px;
+}
+
+.prediction-image {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+  
+.preview-img {
+    max-width: 200px;
+    max-height: 150px;
+    margin-top: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
 }

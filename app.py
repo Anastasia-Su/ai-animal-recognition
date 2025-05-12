@@ -39,7 +39,7 @@ def predict_image(img_path):
 
     # If confidence is less than 60%, show top 3 predictions
     if top_confidence < 0.6:
-        top_indices = predictions.argsort()[-3:][::-1]  # Get the top 3 indices
+        top_indices = predictions.argsort()[-5:][::-1]  # Get the top 3 indices
         top_classes = [(classes[i], float(predictions[i])) for i in top_indices]
         return top_classes, top_class, top_confidence
     else:
@@ -59,6 +59,7 @@ def index():
             path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(path)
             result, top_class, top_confidence = predict_image(path)
+
             return render_template(
                 "result.html",
                 prediction=result,
@@ -66,7 +67,11 @@ def index():
                 top_confidence=top_confidence,
                 image_file=filename,
             )
-    return render_template("index.html")
+
+    with open(os.path.join("model", "class_names.json")) as f:
+        animal_list = json.load(f)
+
+    return render_template("index.html", animal_list=animal_list)
 
 
 @app.route("/static/uploads/<filename>")
