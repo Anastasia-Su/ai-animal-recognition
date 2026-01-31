@@ -5,7 +5,7 @@ The app supports both a **web frontend** and a **REST API** (with Swagger UI) fo
 
 ---
 
-## ✨ Features
+## Features
 
 - Image classification using a trained Keras model
 - REST API with Swagger documentation (`/docs`)
@@ -13,7 +13,7 @@ The app supports both a **web frontend** and a **REST API** (with Swagger UI) fo
 - Confidence-based prediction logic (top-1 or top-K results)
 - Modular Flask project structure
 
-## 🧠 Model
+## Model
 
 - Framework: **TensorFlow / Keras**
 - Training environment: **Google Colab**
@@ -35,41 +35,16 @@ The trained Keras model can be downloaded from Google Drive:
 After downloading, place the file here: `ml/animals.keras`
 
 ## Frontend
-* Upload an image via the web form
-* View predicted animal(s) and confidence
-* Displays uploaded image and results
 
-See page screens below:   
-![index.png](static/screens/index.png)   
+- Upload an image via the web form
+- View predicted animal(s) and confidence
+- Displays uploaded image and results
+
+See page screens below:  
+![index.png](static/screens/index.png)  
 ![result.png](static/screens/result.png)
 
-
-## 🗂 Project Structure
-
-├── app.py # Flask app entry point
-├── api_docs.py # Flask-RESTX API & Swagger setup
-├── ml/
-│ ├── constants.py # Paths, image size, thresholds
-│ ├── predictions.py # Model loading & prediction logic
-│ ├── routes.py # Frontend routes
-│ ├── utils.py # File upload utilities
-│ ├── model.h5 # Trained Keras model
-│ └── classes.json # List of animal classes
-├── model/
-│ ├── animals.keras # Model from Google Colab
-│ └── class_names.json # List of recognizable animals from Google Colab
-├── templates/
-│ ├── index.html # Upload page
-│ └── result.html # Prediction result page
-├── static/
-│ ├── style.css
-├── bg/
-├── img/
-└── uploads/
-
-└── requirements.txt
-
-## 🚀 Installation
+## Installation
 
 ### 1. Clone the repository
 
@@ -90,15 +65,10 @@ python app.py
 ## Model Training
 
 ### Dataset Structure
+
 - This dataset is used: https://www.kaggle.com/datasets/iamsouravbanerjee/animal-image-dataset-90-different-animals
 
-- The dataset is organized using one folder per class:
-  animals/
-  ├── cat/
-  ├── dog/
-  ├── horse/
-  └── ...
-
+- The dataset is organized using one folder per class.
 - Each folder name represents a class label.
 - Classes with fewer than **10 images** are automatically removed before training to ensure stability.
 
@@ -147,10 +117,8 @@ Custom classification head:
 ### Callbacks
 
 - EarlyStopping:
-
-* Monitors validation loss
-* Restores best weights
+  monitors validation loss;
+  restores best weights.
 
 - ReduceLROnPlateau:
-
-* Reduces learning rate when validation loss plateaus
+  reduces learning rate when validation loss plateaus.
