@@ -32,7 +32,7 @@ The trained Keras model can be downloaded from Google Drive:
 
 - https://colab.research.google.com/drive/1AvL1NyTEyRw418cxBqEnUDbH4zTflJ3N?usp=sharing
 
-After downloading, place the file here: `ml/animals.keras`
+After downloading, place the file here: `model/animals.keras`
 
 ## Frontend
 
