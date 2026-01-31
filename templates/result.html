@@ -29,7 +29,7 @@
             100) }}%
           </p>
 
-          {% if top_confidence < 0.6 %}
+          {% if top_confidence < confidence_threshold %}
           <div class="row align-items-start g-3 mt-1">
             <!-- Image Column -->
             <div class="col-md-6 text-center">

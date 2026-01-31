@@ -29,7 +29,7 @@ def get_top_predictions(
     top_confidence = float(predictions[top_index])
 
     if top_confidence < constants.CONFIDENCE_THRESHOLD:
-        top_indices = predictions.argsort()[-constants.TOP_K_LOW_CONF:][::-1]
+        top_indices = predictions.argsort()[-constants.TOP_K_LOW_CONF :][::-1]
         results = [(CLASSES[i], float(predictions[i])) for i in top_indices]
     else:
         results = [(top_class, top_confidence)]

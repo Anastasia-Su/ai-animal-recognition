@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, abort, request
 from ml.predictions import predict_image, CLASSES
 from ml.utils import save_uploaded_file
+from ml.constants import CONFIDENCE_THRESHOLD
 
 
 router = Blueprint("main", __name__, url_prefix="")
@@ -35,5 +36,6 @@ def handle_upload():
         prediction=predictions,
         top_class=top_class,
         top_confidence=top_confidence,
+        confidence_threshold=CONFIDENCE_THRESHOLD,
         image_file=filename,
     )
