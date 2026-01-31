@@ -34,7 +34,7 @@
             <!-- Image Column -->
             <div class="col-md-6 text-center">
               <img
-                src="{{ url_for('uploaded_file', filename=image_file) }}"
+              src="{{ url_for('static', filename='uploads/' + image_file) }}"
                 alt="Uploaded Image"
                 class="img-thumbnail"
                 style="max-height: 200px; max-width: 100%; object-fit: contain"
@@ -60,7 +60,7 @@
           {% else %}
           <div class="text-center mb-1">
             <img
-              src="{{ url_for('uploaded_file', filename=image_file) }}"
+              src="{{ url_for('static', filename='uploads/' + image_file) }}"
               alt="Uploaded Image"
               class="prediction-image img-thumbnail"
               style="max-height: 200px; max-width: 100%; object-fit: contain"
