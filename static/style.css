@@ -24,7 +24,7 @@ body, body.result-page {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    color: #fff; /* Optional: adjust text color for visibility */
+    color: #000; /* Optional: adjust text color for visibility */
 }
   
 .card:hover {

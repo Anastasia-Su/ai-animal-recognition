@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
-from flask import send_from_directory
+from flask import Flask, render_template, send_from_directory, request
 from werkzeug.utils import secure_filename
 import os
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import json
+
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "static/uploads"
@@ -14,16 +14,6 @@ model = load_model("model/animals.keras")
 
 with open("model/class_names.json", "r") as f:
     classes = json.load(f)
-
-# def predict_image(img_path):
-#     img = image.load_img(img_path, target_size=(160, 160))
-#     img_array = image.img_to_array(img)
-#     img_array = np.expand_dims(img_array, axis=0) / 255.0
-#     predictions = model.predict(img_array)
-#     max_index = np.argmax(predictions)
-#     predicted_class = classes[np.argmax(predictions)]
-#     confidence = float(predictions[0][max_index])
-#     return predicted_class, confidence
 
 
 def predict_image(img_path):
