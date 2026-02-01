@@ -116,9 +116,8 @@ Custom classification head:
 
 ### Callbacks
 
-- EarlyStopping:
+- EarlyStopping: 
   monitors validation loss;
   restores best weights.
-
-- ReduceLROnPlateau:
+- ReduceLROnPlateau: 
   reduces learning rate when validation loss plateaus.

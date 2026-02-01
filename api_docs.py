@@ -41,8 +41,8 @@ def setup_api(app):
 
             file = request.files.get("file")
 
-            save_path, filename = save_uploaded_file(file)
-            predictions, top_class, top_confidence = predict_image(save_path)
+            save_path, _ = save_uploaded_file(file)
+            _, top_class, top_confidence = predict_image(save_path)
 
             return {
                 "top_class": top_class,
